@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import {Character} from "./components/Character";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const simpsonsFamily = [
+        {
+            name: "Гомер",
+            age: 40,
+            relation: "отец"
+        },
+        {
+            name: "Мардж",
+            age: 38,
+            relation: "мать"
+        },
+        {
+            name: "Барт",
+            age: 10,
+            relation: "сын"
+        },
+        {
+            name: "Лиза",
+            age: 8,
+            relation: "дочь"
+        },
+        {
+            name: "Мэгги",
+            age: 1,
+            relation: "дочь"
+        }
+    ];
+    return (
+        <div>
+            {simpsonsFamily.map((simpson, index) => <Character character={simpson} key={index}/>)}
+        </div>
+    );
+};
 
-export default App;
+export {App};
