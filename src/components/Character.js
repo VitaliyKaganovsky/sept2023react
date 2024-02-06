@@ -1,5 +1,5 @@
-const Character = ({character}) => {
-    const {name, age, relation} = character
+const Character = ({simp}) => {
+    const {name, age, relation} = simp
     return (
         <div>
             <h1>This is {name}</h1>
