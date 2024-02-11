@@ -1,0 +1,11 @@
+.Mainbox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.DetailsBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
