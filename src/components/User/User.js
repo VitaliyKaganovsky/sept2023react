@@ -1,14 +1,12 @@
-import css from "./User.module.css"
-
-const User = ({user, getterUserDetails}) => {
-    let {id, name, username} = user;
-
+const User = ({user, toSet}) => {
+    const {id,name,username} = user
     return (
-        <div className={css.Box}>
+
+        <div>
             <div>id:{id}</div>
             <div>name:{name}</div>
             <div>username:{username}</div>
-            <button onClick={() => getterUserDetails(user)}>Details</button>
+            <button onClick={()=>toSet(user)}>Details</button>
         </div>
     );
 };
