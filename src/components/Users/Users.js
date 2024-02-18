@@ -5,21 +5,22 @@ import {UserDetails} from "../UserDetails/UserDetails";
 
 const Users = () => {
 
-    const [users, setUsers] = useState([]);
-    const [currentUser, setCurrentUser] = useState(null)
     useEffect(() => {
-        userService.getAll().then(value => value.data).then(value => setUsers(value))
+        userService.getAll().then(({data})=>setUsers(data))
     }, []);
 
-    const userSetter = (user) => {
-      setCurrentUser(user)
+    const detailsGetter = (user) => {
+        setUserDetails(user)
     }
+
+    const [users, setUsers] = useState([])
+    const [userDetails, setUserDetails] = useState(null)
 
     return (
         <div>
-            {users.map(user => <User key={user.id} user={user} toSet={userSetter}/>)}
+            {users.map(user=><User key={user.id} user={user} func={detailsGetter}/>)}
             <br/>
-            {currentUser&&<UserDetails detailsRozmazano={currentUser}/>}
+            {userDetails&&<UserDetails detailed={userDetails}/>}
         </div>
     );
 };
