@@ -1,7 +1,9 @@
+import {PostContainer} from "./components/PostContainer/PostContainer";
+
 const App = () => {
     return (
         <div>
-            App
+            <PostContainer/>
         </div>
     );
 };
